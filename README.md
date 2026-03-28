@@ -77,7 +77,8 @@ A simple and intuitive web application that helps students identify their knowle
     
 
 ### Step 1: Clone the Repository
- git clone https://github.com/yourusername/exam-prep-analyzer.git  cd exam-prep-analyzer   `
+
+Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   git clone https://github.com/yourusername/exam-prep-analyzer.git  cd exam-prep-analyzer   `
 
 ### Step 2: Install Dependencies
 
@@ -348,4 +349,3 @@ Contributions are welcome! Here's how you can help:
 *   Test your changes thoroughly
     
 *   Update documentation if needed
-
