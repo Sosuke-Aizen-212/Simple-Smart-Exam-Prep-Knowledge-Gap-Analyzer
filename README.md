@@ -146,7 +146,7 @@ Navigate to http://localhost:5000 in your web browser.
 📁 Project Structure
 --------------------
 
-`exam-prep-analyzer/  
+exam-prep-analyzer/  
 │  
 ├── app.py                  # Main Flask application  
 ├── database.py             # Database initialization and helpers  
@@ -160,26 +160,26 @@ Navigate to http://localhost:5000 in your web browser.
 │   └── script.js          # Frontend JavaScript  
 │  
 ├── README.md              # This file  
-└── requirements.txt       # Python dependencies (optional)   `
+└── requirements.txt       # Python dependencies (optional)  
 
 🔧 How It Works
 ---------------
 
 ### Database Schema
 
-`   SQLstudents (id, name, email)  
+    SQLstudents (id, name, email)  
     topics (id, name, subject)  
     questions (id, topic_id, question, answer, difficulty)  
-    attempts (id, student_id, question_id, is_correct, date)   `
+    attempts (id, student_id, question_id, is_correct, date)   
 
 ### Analysis Algorithm
 
-`   # Topic is marked as WEAK if:  
+    # Topic is marked as WEAK if:  
     accuracy < 60%  
     # Topic is marked as STRONG if:  
     accuracy >= 80%  
     # Overall Score:  
-    overall_score = (total_correct / total_attempts) * 100   `
+    overall_score = (total_correct / total_attempts) * 100   
 
 ### Recommendation Priority
 
@@ -197,56 +197,57 @@ Navigate to http://localhost:5000 in your web browser.
 
 #### Get All Students
 
-`   GET /api/students   `
+    GET /api/students   
 
 #### Create Student
 
-`   POST /api/students  
+    POST /api/students  
     Content-Type: application/json  
     {    
       "name": "John Doe",    
       "email": "john@example.com"  
-    }   `
+    }   
 
 ### Topics
 
 #### Get All Topics
 
-`   GET /api/topics   `
+    GET /api/topics  
 
 ### Questions
 
 #### Get Questions by Topic
 
-`   GET /api/questions/{topic_id}   `
+    GET /api/questions/{topic_id}  
 
 ### Attempts
 
 #### Submit Answer
 
-`   POST /api/attempt  
+    POST /api/attempt  
     Content-Type: application/json  
     {
       "student_id": 1,    
       "question_id": 1,    
       "answer": "4"  
-    }   `
+    }   
 
 **Response:**
 
-`{ 
-   "correct": true,    
-   "answer": "4"  
- }   `
+    { 
+       "correct": true,    
+       "answer": "4"  
+     }   
 
 ### Analysis
 
 #### Get Student Analysis
 
- `GET /api/analysis/{student_id}   `
+    GET /api/analysis/{student_id}   `
 
 **Response:**
-`   {
+
+    {
       "overall_score": 75.5,    
       "weak_topics": [...],    
       "strong_topics": [...],    
@@ -258,7 +259,7 @@ Navigate to http://localhost:5000 in your web browser.
 
 #### Seed Sample Data
 
-`   POST /api/seed   `
+    POST /api/seed   
 
 🛠️ Technologies Used
 ---------------------
@@ -290,28 +291,28 @@ Navigate to http://localhost:5000 in your web browser.
 
 Edit database.py and add to the add\_sample\_data() function:
 
-`   questions = [  
+    questions = [  
         (1, 'Your question here?', 'answer', 'Easy'),
         # Add more questions...
-    ]   `
+    ]   
 
 ### Changing Thresholds
 
 Edit app.py to modify analysis thresholds:
 
-`   # In the /api/analysis route  
+    # In the /api/analysis route  
     if accuracy < 60:  # Change this value      
         weak_topics.append(topic_data)  
     elif accuracy >= 80:  # Change this value    
-        strong_topics.append(topic_data)   `
+        strong_topics.append(topic_data)   
 
 ### Styling
 
 Modify static/style.css to change colors, fonts, or layout:
 
-`   .btn-primary {    
+    .btn-primary {    
         background: #4299e1;  /* Change button color */ 
-    }   `
+    }   
 
 🧪 Testing
 ----------
