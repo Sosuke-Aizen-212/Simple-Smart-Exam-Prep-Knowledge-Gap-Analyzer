@@ -78,11 +78,11 @@ A simple and intuitive web application that helps students identify their knowle
 
 ### Step 1: Clone the Repository
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   git clone https://github.com/yourusername/exam-prep-analyzer.git  cd exam-prep-analyzer   `
+`   git clone https://github.com/yourusername/exam-prep-analyzer.git  cd exam-prep-analyzer   `
 
 ### Step 2: Install Dependencies
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   pip install flask   `
+`   pip install flask   `
 
 ### Step 3: Initialize Database
 
@@ -90,7 +90,7 @@ The database will be created automatically when you first run the application.
 
 ### Step 4: Run the Application
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   python app.py   `
+`   python app.py   `
 
 ### Step 5: Open in Browser
 
@@ -146,18 +146,18 @@ Navigate to http://localhost:5000 in your web browser.
 📁 Project Structure
 --------------------
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   textexam-prep-analyzer/  │  ├── app.py                  # Main Flask application  ├── database.py             # Database initialization and helpers  ├── exam_prep.db           # SQLite database (created automatically)  │  ├── templates/  │   └── index.html         # Main HTML template  │  ├── static/  │   ├── style.css          # Stylesheet  │   └── script.js          # Frontend JavaScript  │  ├── README.md              # This file  └── requirements.txt       # Python dependencies (optional)   `
+`   textexam-prep-analyzer/  │  ├── app.py                  # Main Flask application  ├── database.py             # Database initialization and helpers  ├── exam_prep.db           # SQLite database (created automatically)  │  ├── templates/  │   └── index.html         # Main HTML template  │  ├── static/  │   ├── style.css          # Stylesheet  │   └── script.js          # Frontend JavaScript  │  ├── README.md              # This file  └── requirements.txt       # Python dependencies (optional)   `
 
 🔧 How It Works
 ---------------
 
 ### Database Schema
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   SQLstudents (id, name, email)  topics (id, name, subject)  questions (id, topic_id, question, answer, difficulty)  attempts (id, student_id, question_id, is_correct, date)   `
+`   SQLstudents (id, name, email)  topics (id, name, subject)  questions (id, topic_id, question, answer, difficulty)  attempts (id, student_id, question_id, is_correct, date)   `
 
 ### Analysis Algorithm
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   Python# Topic is marked as WEAK if:  accuracy < 60%  # Topic is marked as STRONG if:  accuracy >= 80%  # Overall Score:  overall_score = (total_correct / total_attempts) * 100   `
+`   Python# Topic is marked as WEAK if:  accuracy < 60%  # Topic is marked as STRONG if:  accuracy >= 80%  # Overall Score:  overall_score = (total_correct / total_attempts) * 100   `
 
 ### Recommendation Priority
 
