@@ -17,10 +17,16 @@ A simple and intuitive web application that helps students identify their knowle
 *   [Project Structure]
     
 *   [How It Works]
-*   
+  
 *   [API Documentation]
     
 *   [Technologies Used]
+
+*   Customization
+
+*   Testing
+
+*   Roadmap
     
 
 ✨ Features
