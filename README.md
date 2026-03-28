@@ -6,21 +6,21 @@ A simple and intuitive web application that helps students identify their knowle
 📋 Table of Contents
 --------------------
 
-*   [Features]
+*   Features
     
-*   [Demo]
+*   Demo
     
-*   [Installation]
+*   Installation
     
-*   [Usage]
+*   Usage
     
-*   [Project Structure]
+*   Project Structure
     
-*   [How It Works]
+*   How It Works
   
-*   [API Documentation]
+*   API Documentation
     
-*   [Technologies Used]
+*   Technologies Used
 
 *   Customization
 
