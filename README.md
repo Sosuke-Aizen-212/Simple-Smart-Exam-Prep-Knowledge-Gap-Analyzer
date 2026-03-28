@@ -146,18 +146,40 @@ Navigate to http://localhost:5000 in your web browser.
 📁 Project Structure
 --------------------
 
-`   textexam-prep-analyzer/  │  ├── app.py                  # Main Flask application  ├── database.py             # Database initialization and helpers  ├── exam_prep.db           # SQLite database (created automatically)  │  ├── templates/  │   └── index.html         # Main HTML template  │  ├── static/  │   ├── style.css          # Stylesheet  │   └── script.js          # Frontend JavaScript  │  ├── README.md              # This file  └── requirements.txt       # Python dependencies (optional)   `
+`exam-prep-analyzer/  
+│  
+├── app.py                  # Main Flask application  
+├── database.py             # Database initialization and helpers  
+├── exam_prep.db           # SQLite database (created automatically)  
+│  
+├── templates/  
+│   └── index.html         # Main HTML template  
+│  
+├── static/  
+│   ├── style.css          # Stylesheet  
+│   └── script.js          # Frontend JavaScript  
+│  
+├── README.md              # This file  
+└── requirements.txt       # Python dependencies (optional)   `
 
 🔧 How It Works
 ---------------
 
 ### Database Schema
 
-`   SQLstudents (id, name, email)  topics (id, name, subject)  questions (id, topic_id, question, answer, difficulty)  attempts (id, student_id, question_id, is_correct, date)   `
+`   SQLstudents (id, name, email)  
+    topics (id, name, subject)  
+    questions (id, topic_id, question, answer, difficulty)  
+    attempts (id, student_id, question_id, is_correct, date)   `
 
 ### Analysis Algorithm
 
-`   Python# Topic is marked as WEAK if:  accuracy < 60%  # Topic is marked as STRONG if:  accuracy >= 80%  # Overall Score:  overall_score = (total_correct / total_attempts) * 100   `
+`   # Topic is marked as WEAK if:  
+    accuracy < 60%  
+    # Topic is marked as STRONG if:  
+    accuracy >= 80%  
+    # Overall Score:  
+    overall_score = (total_correct / total_attempts) * 100   `
 
 ### Recommendation Priority
 
@@ -175,49 +197,68 @@ Navigate to http://localhost:5000 in your web browser.
 
 #### Get All Students
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   httpGET /api/students   `
+`   GET /api/students   `
 
 #### Create Student
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   httpPOST /api/students  Content-Type: application/json  {    "name": "John Doe",    "email": "john@example.com"  }   `
+`   POST /api/students  
+    Content-Type: application/json  
+    {    
+      "name": "John Doe",    
+      "email": "john@example.com"  
+    }   `
 
 ### Topics
 
 #### Get All Topics
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   httpGET /api/topics   `
+`   GET /api/topics   `
 
 ### Questions
 
 #### Get Questions by Topic
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   GET /api/questions/{topic_id}   `
+`   GET /api/questions/{topic_id}   `
 
 ### Attempts
 
 #### Submit Answer
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   POST /api/attempt  Content-Type: application/json  {    "student_id": 1,    "question_id": 1,    "answer": "4"  }   `
+`   POST /api/attempt  
+    Content-Type: application/json  
+    {
+      "student_id": 1,    
+      "question_id": 1,    
+      "answer": "4"  
+    }   `
 
 **Response:**
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   {    "correct": true,    "answer": "4"  }   `
+`{ 
+   "correct": true,    
+   "answer": "4"  
+ }   `
 
 ### Analysis
 
 #### Get Student Analysis
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   GET /api/analysis/{student_id}   `
+ `GET /api/analysis/{student_id}   `
 
 **Response:**
-
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   {    "overall_score": 75.5,    "weak_topics": [...],    "strong_topics": [...],    "recommendations": [...],    "total_attempts": 10  }   `
+`   {
+      "overall_score": 75.5,    
+      "weak_topics": [...],    
+      "strong_topics": [...],    
+      "recommendations": [...],    
+      "total_attempts": 10  
+    }   `
 
 ### Utilities
 
 #### Seed Sample Data
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   POST /api/seed   `
+`   POST /api/seed   `
 
 🛠️ Technologies Used
 ---------------------
@@ -249,19 +290,28 @@ Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQL
 
 Edit database.py and add to the add\_sample\_data() function:
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   questions = [      (1, 'Your question here?', 'answer', 'Easy'),      # Add more questions...  ]   `
+`   questions = [  
+        (1, 'Your question here?', 'answer', 'Easy'),
+        # Add more questions...
+    ]   `
 
 ### Changing Thresholds
 
 Edit app.py to modify analysis thresholds:
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   # In the /api/analysis route  if accuracy < 60:  # Change this value      weak_topics.append(topic_data)  elif accuracy >= 80:  # Change this value      strong_topics.append(topic_data)   `
+`   # In the /api/analysis route  
+    if accuracy < 60:  # Change this value      
+        weak_topics.append(topic_data)  
+    elif accuracy >= 80:  # Change this value    
+        strong_topics.append(topic_data)   `
 
 ### Styling
 
 Modify static/style.css to change colors, fonts, or layout:
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   .btn-primary {      background: #4299e1;  /* Change button color */  }   `
+`   .btn-primary {    
+        background: #4299e1;  /* Change button color */ 
+    }   `
 
 🧪 Testing
 ----------
@@ -323,29 +373,3 @@ Use the included sample data to test:
     
 *    User authentication
     
-
-🤝 Contributing
----------------
-
-Contributions are welcome! Here's how you can help:
-
-1.  **Fork the repository**
-    
-2.  Bashgit checkout -b feature/AmazingFeature
-    
-3.  Bashgit commit -m 'Add some AmazingFeature'
-    
-4.  Bashgit push origin feature/AmazingFeature
-    
-5.  **Open a Pull Request**
-    
-
-### Contribution Guidelines
-
-*   Follow existing code style
-    
-*   Add comments for complex logic
-    
-*   Test your changes thoroughly
-    
-*   Update documentation if needed
