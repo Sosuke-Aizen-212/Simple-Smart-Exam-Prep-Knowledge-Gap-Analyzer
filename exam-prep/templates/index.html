@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Prep - Knowledge Gap Analyzer</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Exam Prep Analyzer</h1>
+            <div class="student-select">
+                <select id="studentSelect">
+                    <option value="">Select Student</option>
+                </select>
+                <button onclick="showNewStudentForm()">New Student</button>
+            </div>
+        </header>
+
+        <!-- Welcome Screen -->
+        <div id="welcomeScreen" class="welcome">
+            <h2>Welcome!</h2>
+            <p>Identify your knowledge gaps and improve your exam performance</p>
+            <button onclick="loadSampleData()" class="btn-primary">Load Sample Data</button>
+            <button onclick="showNewStudentForm()" class="btn-secondary">Create Student</button>
+        </div>
+
+        <!-- Main Dashboard -->
+        <div id="dashboard" class="hidden">
+            <!-- Stats -->
+            <div class="stats">
+                <div class="stat-card">
+                    <h3 id="overallScore">0%</h3>
+                    <p>Overall Score</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="weakCount">0</h3>
+                    <p>Weak Topics</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="strongCount">0</h3>
+                    <p>Strong Topics</p>
+                </div>
+                <div class="stat-card">
+                    <h3 id="totalAttempts">0</h3>
+                    <p>Questions Done</p>
+                </div>
+            </div>
+
+            <!-- Analysis Button -->
+            <button onclick="analyzePerformance()" class="btn-analyze">Analyze My Performance</button>
+
+            <!-- Weak Topics -->
+            <div class="section">
+                <h2>❌ Topics to Improve</h2>
+                <div id="weakTopics" class="topic-list">
+                    <p class="empty">No data yet. Start practicing!</p>
+                </div>
+            </div>
+
+            <!-- Recommendations -->
+            <div class="section">
+                <h2>💡 Recommendations</h2>
+                <div id="recommendations" class="recommendation-list">
+                    <p class="empty">Complete the analysis to get recommendations</p>
+                </div>
+            </div>
+
+            <!-- Strong Topics -->
+            <div class="section">
+                <h2>✅ Topics You Master</h2>
+                <div id="strongTopics" class="topic-list">
+                    <p class="empty">Keep practicing to build mastery!</p>
+                </div>
+            </div>
+
+            <!-- Practice -->
+            <div class="section">
+                <h2>📝 Practice Questions</h2>
+                <select id="topicSelect">
+                    <option value="">Choose a topic</option>
+                </select>
+                <button onclick="startPractice()" class="btn-primary">Start Practice</button>
+                
+                <div id="questionArea" class="hidden">
+                    <div class="question-box">
+                        <h3 id="questionText"></h3>
+                        <input type="text" id="answerInput" placeholder="Your answer">
+                        <button onclick="submitAnswer()" class="btn-primary">Submit</button>
+                        <div id="feedback" class="feedback hidden"></div>
+                        <button onclick="nextQuestion()" id="nextBtn" class="btn-secondary hidden">Next Question</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Student Modal -->
+    <div id="studentModal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Create New Student</h2>
+            <input type="text" id="studentName" placeholder="Student Name">
+            <input type="email" id="studentEmail" placeholder="Email">
+            <div class="modal-buttons">
+                <button onclick="createStudent()" class="btn-primary">Create</button>
+                <button onclick="closeModal()" class="btn-secondary">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
