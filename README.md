@@ -6,21 +6,21 @@ A simple and intuitive web application that helps students identify their knowle
 📋 Table of Contents
 --------------------
 
-*   [Features](https://arena.ai/c/019d359c-9b7b-7120-a172-320f365a1766#features)
+*   [Features]
     
-*   [Demo](https://arena.ai/c/019d359c-9b7b-7120-a172-320f365a1766#demo)
+*   [Demo]
     
-*   [Installation](https://arena.ai/c/019d359c-9b7b-7120-a172-320f365a1766#installation)
+*   [Installation]
     
-*   [Usage](https://arena.ai/c/019d359c-9b7b-7120-a172-320f365a1766#usage)
+*   [Usage]
     
-*   [Project Structure](https://arena.ai/c/019d359c-9b7b-7120-a172-320f365a1766#project-structure)
+*   [Project Structure]
     
-*   [How It Works](https://arena.ai/c/019d359c-9b7b-7120-a172-320f365a1766#how-it-works)
+*   [How It Works]
+*   
+*   [API Documentation]
     
-*   [API Documentation](https://arena.ai/c/019d359c-9b7b-7120-a172-320f365a1766#api-documentation)
-    
-*   [Technologies Used](https://arena.ai/c/019d359c-9b7b-7120-a172-320f365a1766#technologies-used)
+*   [Technologies Used]
     
 
 ✨ Features
